@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="know-adekanbi.css">
+        <title>How Well Do You Know ADekanbi?</title>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        
+        <div class="quiz-container">
+            <h1>How Well Do You Know Adekanbi, ehhnnnn Baby.</h1>
+            <p style="
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: white;">Let's see if you truly know your man 😏💕<br>
+                Answer all 10 questions to unlock a secret message
+            </p>
+
+
+            <h2 id="question"></h2>
+            <button class="option-btn" onclick="checkAnswer(0)" id="btn0"></button>
+
+            <button class="option-btn" onclick="checkAnswer(1)" id="btn1"></button>
+
+            <button class="option-btn" onclick="checkAnswer(2)" id="btn2"></button>
+
+            <button class="option-btn" onclick="checkAnswer(3)" id="btn3"></button>
+            <p id="progress"></p>
+            <p id="result"></p>
+
+            <a href="Zainab.html" class="back-btn">Back To Our Love Story</a>
+        </div>
+    
+       <audio autoplay id="music"><source src="Edd_Sheeran_-_Perfect_(mp3.pm).mp3" type="audio/mp3"></audio>
+
+
+        <script>
+            const quizQuestions = [
+                {
+                    question: "What is my Middle Name? 😒",
+                    options:[ 
+                        "Adekanbi",
+                        "Emmanuel",
+                        "Babatunde",
+                        "Senayon"
+
+                    ],
+                    answer:2
+                },
+
+                {
+                    question: "What is my favorite thing about you?😊",
+                    options:[
+                        "Your Smile",
+                        "Your Lips",
+                        "Your Intelligence",
+                        "Your Backside"
+                    ],
+                    answer:1
+                },
+                
+                {
+                    question: "What would I rather do with you on a free day",
+                    options: [
+                        "Go On A Date",
+                        "Sleep All Day",
+                        "Stay Indoors With You All Day",
+                        "Go With You to The Beach"
+                    ],
+                    answer:2
+                },
+
+                {
+                    question: "What nickname would I most likely call you",
+                    options:[
+                        "Babe",
+                        "Ololade Mi",
+                        "Zainana",
+                        "Ajoke"
+                    ],
+                    answer:0
+                },
+
+                {
+                    question: "Which of these would I choose for us?",
+                    options:[
+                        "Romantic Dinner",
+                        "Club Night",
+                        "Football Match",
+                        "Picnic"
+                    ],
+                    answer:0
+                },
+
+                {
+                    question: "What was the first that caught my attention about you? 😍",
+                    options:[
+                        "Your Smile",
+                        "Your Voice",
+                        "Your Lips",
+                        "The Whole Of You"
+                    ],
+                    answer:3
+                },
+
+                {
+                    question: "What is my best food?",
+                    options:[
+                        "Rice and Beans With Egg Sauce",
+                        "Egusi Soup With Swallow",
+                        "None Of The Above",
+                        "Okra Soup"
+                    ],
+                    answer:2
+                },
+
+                {
+                    question: "What do I value most in our relationship?",
+                    options:[
+                        "Trust",
+                        "Money",
+                        "Communication",
+                        "Honesty"
+                    ],
+                    answer:2
+                },
+
+                {
+                    question: "What is one thing I always want for you?",
+                    options:[
+                        "Success",
+                        "Peace",
+                        "Happiness",
+                        "All Of The Above"
+                    ],
+                    answer:3
+                },
+
+                {
+                    question: "How much do I love you?",
+                    options:[
+                        "Very Much",
+                        "Daaku",
+                        "More Than Words Can Explain",
+                        "So So Much"
+                    ],
+                    answer:1
+                }
+            ];
+
+            let currentQuestion = 0;
+
+            let score = 0;
+
+            function loadQuestion(){
+                document.getElementById("question").innerText = quizQuestions[currentQuestion].question;
+
+                document.getElementById("btn0").innerText = quizQuestions[currentQuestion].options[0];
+
+                document.getElementById("btn1").innerText = quizQuestions[currentQuestion].options[1];
+
+                document.getElementById("btn2").innerText = quizQuestions[currentQuestion].options[2];
+
+                document.getElementById("btn3").innerText = quizQuestions[currentQuestion].options[3];
+
+                document.getElementById("progress").innerText = "Question" + (currentQuestion + 1) + " of " + quizQuestions.length;
+            }
+
+            function checkAnswer(selected){
+                if(selected === quizQuestions[currentQuestion].answer){
+                    score++;
+                }
+
+                currentQuestion++;
+
+                if(currentQuestion < quizQuestions.length){
+                    loadQuestion();
+                }
+
+                else{
+                    showResult();
+                }
+            }
+
+            function showResult(){
+                document.getElementById("question").innerHTML = "Challenge Completed. 😘";
+
+                document.getElementById("btn0").style.display = "none";
+                document.getElementById("btn1").style.display = "none";
+                document.getElementById("btn2").style.display = "none";
+                document.getElementById("btn3").style.display = "none";
+
+                let message = "";
+
+                if (score <= 4){
+                    message = 
+                    "😂 Hmmm.... We definitely need another date";
+                }
+
+                else if(score <= 7){
+                    message = 
+                    "😘 Not bad my love. Youy know me quite well!";
+                }
+
+                else if(score <= 9){
+                    message = 
+                    "🥰 Wow! You really know me";
+                }
+
+                else{
+                    message = 
+                    "🎉 PERFECT SCORE 💕 <br><br>Ajoke mhi, You really know me better than anyone else. My heart is truly yours forever. ❤️"
+
+                    setTimeout(function(){
+
+                        alert(
+                            "🎉 SECRET MESSAGE UNLOCKED 🎉\n\nAjoke baby 🥰, \n\nThank you for being one of the best things that has ever happened to me.\n\nEvery day with you feels like a blessing.\n\nI love you today, tomorrow and always, infact I love you daaku lol.\n\nForever Yours, \nAdekanbi"
+                        );
+                    },500);
+                }
+
+                document.getElementById("result").innerHTML = "Score: " + score + "/10<br><br>" + message;
+
+                document.getElementById("progress").innerHTML = "";
+            }
+
+            loadQuestion();
+            /*
+            const music = document.getElementById("music");
+
+            window,onload = () => {
+                const savedTime = localStorage.getItem("musicTime");
+                if (savedTime) {
+                    music.currentTime = savedTime;
+                }
+            };*/
+        </script>
+    </body>
+
+</html>

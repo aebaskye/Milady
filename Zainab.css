@@ -1,0 +1,406 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins' ,sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Background image layer */
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("Zee\ first.jpeg") center/cover no-repeat;
+    z-index: -2;
+}
+
+/* Pink romantic overlay */
+body::after{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(49, 0, 0, 0.85);
+    z-index: -1
+}
+
+/* Password Screen */
+#passwordScreen{
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#passwordScreen::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("Zee\ third.jpeg") center/cover no-repeat;
+    z-index: -2;
+}
+
+#passwordScreen::after{
+      content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(49, 0, 0, 0.85);
+    z-index: -1
+}
+
+.password-box{
+    background: rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 25px;
+    backdrop-filter:blur(10px);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.password-box h2{
+    margin-bottom: 10px;
+    font-display: block;
+}
+
+.password-box input{
+    width: 55%;
+    height: 17px;
+    padding: 12px 30px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.password-box button{
+    padding: 12px 30px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ff4d6d;
+}
+
+/* Welcome Popup */
+
+#welcomeMessage{
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.welcome-box{
+    background: white;
+    color: #ff4d6d;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 450px;
+    text-align: center;
+}
+
+.welcome-box button{
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+/* Hero */
+.hero{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1{
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+}
+
+.hero p{
+    max-width: 700px;
+    margin-top: 20px;
+    text-align: left;
+    padding: 10px;
+}
+
+.cover{
+    background: #f86d6d48;
+    border-radius: 10px;
+    box-shadow: 50px #000000;
+}
+
+.heart{
+    font-size: 70px;
+    animation:beat 1s infinite;
+}
+
+/* Countdown */
+.countdown{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.box{
+    background: rgba(255, 20, 20, 0.514);
+    padding: 25px;
+    border-radius: 20px;
+    min-width: 170px;
+}
+
+/* Section */
+.section{
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.title{
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card{
+    background: rgba(141, 30, 30, 0.116);
+    padding: 35px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    line-height: 1.9;
+}
+
+/* Gallery */
+.gallery{
+    display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap:12px
+}
+
+.gallery img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: 4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.04);
+}
+.gallery img,
+.gallery video{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* floating heart */
+.floating{
+    position: fixed;
+    bottom: -50px;
+    pointer-events: none;
+    animation:float 10s linear infinite;
+}
+
+.envelope{
+
+    width:min(90vw,500px);
+
+    height:300px;
+
+    margin:auto;
+
+    position:relative;
+
+    background:#f8e8d0;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+
+    transition:1s;
+}
+
+.ribbon{
+
+    position:absolute;
+
+    width:100%;
+
+    height:25px;
+
+    background:#b8860b;
+
+    top:50%;
+
+    transform:translateY(-50%);
+}
+
+.flap{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:50%;
+
+    background:#f2dcc0;
+
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    transform-origin:top;
+    transition:1s;
+}
+
+.envelope-text{
+
+    position:absolute;
+
+    bottom:30px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#333;
+
+    font-weight:bold;
+}
+
+.hidden-card{
+
+    display:none;
+
+    margin-top:40px;
+}
+
+@keyframes beat{
+    50%{
+        transform: scale(1.15);
+    }
+}
+
+@keyframes float{
+    from{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to{
+        transform:translateY(-120vh);
+        opacity: 0;
+    }
+}
+
+.typewriter{
+    border-right: 3px solid white;
+    white-space: pre-wrap;
+    overflow: hidden;
+}
+
+footer{
+    text-align: center;
+    padding: 60px 20px;
+}
+.Ade{
+    font-size: 2rem;
+    margin-top: -34px;
+    font-family: cursive;
+
+}
+
+@media (max-width: 768px){
+
+    /* HERO TEXT */
+    .hero h1{
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .hero p{
+        font-size: 14px;
+        line-height: 1.6;
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    /* SECTION TITLES */
+    .title{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    /* CARD TEXT */
+    .card{
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    /* GALLERY + VIDEOS */
+    .gallery{
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px;
+    }
+
+    .gallery img,
+    .gallery video{
+        height: 180px;
+        border-radius: 12px;
+    }
+
+    /* ENVELOPE */
+    .luxury-envelope,
+    .envelope{
+        width: 90%;
+        max-width: 320px;
+        margin: auto;
+    }
+
+    .letter-paper{
+        width: 95%;
+        margin: auto;
+    }
+
+    /* PASSWORD BOX */
+    .password-box,
+    .welcome-box{
+        width: 90%;
+        padding: 20px;
+    }
+
+}

@@ -1,0 +1,222 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    overflow-x:hidden;
+
+    background:linear-gradient(
+        135deg,
+        #ff4d6d,
+        #ff758f,
+        #ffb3c6
+    );
+}
+
+
+/* Background Hearts */
+
+body::before{
+    content:"💕 💖 💘 💕 💖 💘";
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    font-size:4rem;
+    opacity:.08;
+    pointer-events:none;
+}
+
+/* Main Card */
+
+.quiz-container{
+
+    width:100%;
+    max-width:850px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:30px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.2);
+
+    animation:fadeIn 1s ease;
+}
+
+/* Heading */
+
+.quiz-container h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:4rem;
+
+    color:white;
+
+    margin-bottom:15px;
+
+    text-shadow:2px 2px 10px rgba(0,0,0,.2);
+}
+
+/* Question */
+
+#question{
+
+    color:white;
+
+    font-size:1.5rem;
+
+    margin:25px 0;
+
+    line-height:1.6;
+}
+
+/* Progress */
+
+#progress{
+
+    color:white;
+
+    margin-top:20px;
+
+    font-weight:600;
+
+    font-size:18px;
+}
+
+/* Result */
+
+#result{
+
+    color:white;
+
+    margin-top:25px;
+
+    font-size:1.2rem;
+
+    font-weight:bold;
+}
+
+/* Quiz Buttons */
+
+.option-btn{
+
+    width:100%;
+
+    padding:18px;
+
+    margin:12px 0;
+
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    background:white;
+
+    color:#ff4d6d;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s ease;
+}
+
+.option-btn:hover{
+
+    transform:translateY(-3px);
+
+    background:#fff0f4;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+/* Back Button */
+
+.back-btn{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:15px 30px;
+
+    text-decoration:none;
+
+    background:white;
+
+    color:#ff4d6d;
+
+    border-radius:15px;
+
+    font-weight:bold;
+
+    transition:.3s ease;
+}
+
+.back-btn:hover{
+
+    background:#fff0f4;
+
+    transform:scale(1.05);
+}
+
+/* Fade Animation */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .quiz-container{
+        padding:25px;
+    }
+
+    .quiz-container h1{
+        font-size:2.8rem;
+    }
+
+    #question{
+        font-size:1.2rem;
+    }
+
+    .option-btn{
+        font-size:15px;
+        padding:15px;
+    }
+
+}
