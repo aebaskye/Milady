@@ -72,7 +72,7 @@
                 <div class="countdown">
                     <div class="box">
                         <h2 id="days">0</h2>
-                        <p>Days Together 💕</p>
+                        <p style="font-size: 2rem;">Together 💕</p>
                     </div>
                 </div>
             </section>
@@ -307,9 +307,31 @@
                 /* DAYS TOGETHER */
                 const startDate = new Date("2025-05-12");
                 const today = new Date();
-                const difference = today - startDate;
-                const days = Math.floor(difference / (1000*60*60*24));
-                document.getElementById("days").innerText = days;
+                
+                let years = today.getFullYear() - startDate.getFullYear();
+                let months = today.getMonth() - startDate.getMonth();
+                let days = today.getDate() - startDate.getDate();
+                
+                if(days < 0){
+                    months--;
+                    const previousMonth = new Date(
+                        today.getFullYear(),
+                        today.getMonth(),
+                        0
+                    );
+                
+                    days += previousMonth.getDate();
+                }
+                
+                if(months < 0){
+                    years--;
+                    months += 12;
+                }
+                
+                document.getElementById("days").innerHTML =
+                `${years} Year${years !== 1 ? "s" : ""}<br>
+                ${months} Month${months !== 1 ? "s" : ""}<br>
+                ${days} Day${days !== 1 ? "s" : ""}`;
         
                 /* FLOATING HEARTS */
                 function createHeart(){
