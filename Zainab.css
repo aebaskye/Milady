@@ -171,10 +171,12 @@ body::after{
 }
 
 .box{
-    background: rgba(255, 20, 20, 0.514);
-    padding: 25px;
-    border-radius: 20px;
-    min-width: 170px;
+background:rgba(236, 8, 8, 0.226);
+padding:30px;
+border-radius:20px;
+min-width:240px;
+backdrop-filter:blur(10px);
+box-shadow:0 10px 25px rgba(255, 96, 96, 0.767);
 }
 
 /* Section */
