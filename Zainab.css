@@ -19,6 +19,7 @@ body{
     font-family: 'Poppins' ,sans-serif;
     color: white;
     overflow-x: hidden;
+    min-height: 100dvh;
 }
 
 /* Background image layer */
@@ -26,20 +27,20 @@ body::before{
     content: "";
     position: fixed;
     inset: 0;
-    background: url("Zee\ first.jpeg") center/cover no-repeat;
+    background: url("Zee first.jpeg") center/cover no-repeat;
     z-index: -2;
 }
 
-/* Pink romantic overlay */
+/* Romantic overlay */
 body::after{
     content: "";
     position: fixed;
     inset: 0;
     background: rgba(49, 0, 0, 0.85);
-    z-index: -1
+    z-index: -1;
 }
 
-/* Password Screen */
+/* PASSWORD SCREEN */
 #passwordScreen{
     position: fixed;
     inset: 0;
@@ -53,16 +54,16 @@ body::after{
     content: "";
     position: fixed;
     inset: 0;
-    background: url("Zee\ third.jpeg") center/cover no-repeat;
+    background: url("Zee third.jpeg") center/cover no-repeat;
     z-index: -2;
 }
 
 #passwordScreen::after{
-      content: "";
+    content: "";
     position: fixed;
     inset: 0;
     background: rgba(49, 0, 0, 0.85);
-    z-index: -1
+    z-index: -1;
 }
 
 .password-box{
@@ -77,17 +78,14 @@ body::after{
 
 .password-box h2{
     margin-bottom: 10px;
-    font-display: block;
 }
 
 .password-box input{
-    width: 55%;
-    height: 17px;
-    padding: 12px 30px;
+    width: 100%;
+    padding: 12px;
     margin-top: 15px;
     border: none;
     border-radius: 10px;
-    margin-top: 15px;
 }
 
 .password-box button{
@@ -100,8 +98,7 @@ body::after{
     color: #ff4d6d;
 }
 
-/* Welcome Popup */
-
+/* WELCOME POPUP */
 #welcomeMessage{
     position: fixed;
     inset: 0;
@@ -121,15 +118,7 @@ body::after{
     text-align: center;
 }
 
-.welcome-box button{
-    padding: 12px 25px;
-    border: none;
-    border-radius: 10px;
-    margin-top: 15px;
-    cursor: pointer;
-}
-
-/* Hero */
+/* HERO */
 .hero{
     min-height: 100vh;
     display: flex;
@@ -149,21 +138,15 @@ body::after{
     max-width: 700px;
     margin-top: 20px;
     text-align: left;
-    padding: 10px;
 }
 
-.cover{
-    background: #f86d6d48;
-    border-radius: 10px;
-    box-shadow: 50px #000000;
-}
-
+/* HEART */
 .heart{
     font-size: 70px;
     animation:beat 1s infinite;
 }
 
-/* Countdown */
+/* COUNTDOWN */
 .countdown{
     display: flex;
     justify-content: center;
@@ -171,15 +154,15 @@ body::after{
 }
 
 .box{
-background:rgba(236, 8, 8, 0.226);
-padding:30px;
-border-radius:20px;
-min-width:240px;
-backdrop-filter:blur(10px);
-box-shadow:0 10px 25px rgba(255, 96, 96, 0.767);
+    background:rgba(236, 8, 8, 0.226);
+    padding:30px;
+    border-radius:20px;
+    min-width:240px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 10px 25px rgba(255, 96, 96, 0.767);
 }
 
-/* Section */
+/* SECTIONS */
 .section{
     padding: 80px 20px;
     max-width: 1000px;
@@ -190,7 +173,6 @@ box-shadow:0 10px 25px rgba(255, 96, 96, 0.767);
     font-family: 'Great Vibes', cursive;
     font-size: 4rem;
     text-align: center;
-    margin-bottom: 30px;
 }
 
 .card{
@@ -201,24 +183,13 @@ box-shadow:0 10px 25px rgba(255, 96, 96, 0.767);
     line-height: 1.9;
 }
 
-/* Gallery */
+/* GALLERY */
 .gallery{
     display: grid;
     grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-    gap:12px
+    gap:12px;
 }
 
-.gallery img{
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 20px;
-    transition: 4s;
-}
-
-.gallery img:hover{
-    transform:scale(1.04);
-}
 .gallery img,
 .gallery video{
     width: 100%;
@@ -227,7 +198,7 @@ box-shadow:0 10px 25px rgba(255, 96, 96, 0.767);
     border-radius: 15px;
 }
 
-/* floating heart */
+/* FLOATING HEARTS */
 .floating{
     position: fixed;
     bottom: -50px;
@@ -235,174 +206,123 @@ box-shadow:0 10px 25px rgba(255, 96, 96, 0.767);
     animation:float 10s linear infinite;
 }
 
+/* ENVELOPE (FIXED RESPONSIVE) */
 .envelope{
-
-    width:min(90vw,500px);
-
-    height:300px;
-
-    margin:auto;
-
-    position:relative;
-
-    background:#f8e8d0;
-
-    border-radius:15px;
-
-    cursor:pointer;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.2);
-
-    transition:1s;
+    width: min(92vw, 500px);
+    height: clamp(180px, 40vh, 320px);
+    margin: auto;
+    position: relative;
+    background: #f8e8d0;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 15px 35px rgba(0,0,0,.2);
+    transition: 1s;
 }
 
 .ribbon{
-
     position:absolute;
-
     width:100%;
-
     height:25px;
-
     background:#b8860b;
-
     top:50%;
-
     transform:translateY(-50%);
 }
 
 .flap{
-
     position:absolute;
-
     top:0;
-
     left:0;
-
     width:100%;
-
     height:50%;
-
     background:#f2dcc0;
-
     clip-path:polygon(0 0,100% 0,50% 100%);
     transform-origin:top;
     transition:1s;
+    will-change: transform;
 }
 
 .envelope-text{
-
     position:absolute;
-
     bottom:30px;
-
     width:100%;
-
     text-align:center;
-
     color:#333;
-
     font-weight:bold;
+    font-size: 14px;
 }
 
 .hidden-card{
-
     display:none;
-
     margin-top:40px;
 }
 
+/* ANIMATIONS */
 @keyframes beat{
-    50%{
-        transform: scale(1.15);
-    }
+    50%{ transform: scale(1.15); }
 }
 
 @keyframes float{
-    from{
-        transform: translateY(0);
-        opacity: 1;
-    }
-    to{
-        transform:translateY(-120vh);
-        opacity: 0;
-    }
+    from{ transform: translateY(0); opacity: 1; }
+    to{ transform: translateY(-120vh); opacity: 0; }
 }
 
+/* TYPEWRITER */
 .typewriter{
     border-right: 3px solid white;
     white-space: pre-wrap;
     overflow: hidden;
 }
 
+/* FOOTER */
 footer{
     text-align: center;
     padding: 60px 20px;
 }
+
 .Ade{
     font-size: 2rem;
     margin-top: -34px;
     font-family: cursive;
-
 }
 
+/* 📱 MOBILE */
 @media (max-width: 768px){
 
-    /* HERO TEXT */
     .hero h1{
         font-size: 28px;
-        text-align: center;
     }
 
     .hero p{
         font-size: 14px;
-        line-height: 1.6;
-        padding: 0 10px;
-        text-align: left;
     }
 
-    /* SECTION TITLES */
     .title{
         font-size: 20px;
-        text-align: center;
     }
 
-    /* CARD TEXT */
     .card{
         font-size: 14px;
         padding: 15px;
     }
 
-    /* GALLERY + VIDEOS */
-    .gallery{
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 10px;
-    }
-
     .gallery img,
     .gallery video{
         height: 180px;
-        border-radius: 12px;
     }
 
-    /* ENVELOPE */
-    .luxury-envelope,
     .envelope{
-        width: 90%;
-        max-width: 320px;
-        margin: auto;
+        width: 92%;
+        max-width: 340px;
+        height: clamp(160px, 35vh, 260px);
     }
 
-    .letter-paper{
-        width: 95%;
-        margin: auto;
+    .envelope-text{
+        font-size: 12px;
     }
 
-    /* PASSWORD BOX */
     .password-box,
     .welcome-box{
         width: 90%;
         padding: 20px;
     }
-
 }
